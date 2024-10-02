@@ -7,6 +7,11 @@ const answer = document.createElement('input');
 
 output.textContent = 'Click the button to start the game';
 btn.textContent = 'Start Game';
+output.classList.add('output');
+answer.setAttribute('placeholder','??');
+answer.setAttribute('type','number');
+answer.classList.add('box_answer');
+
 gameArea.append(output);
 gameArea.append(btn);
 
@@ -22,9 +27,7 @@ const game = {
 
 btn.addEventListener('click', start_game)
 
-for(let i=0;i<10;i++){
 
-}
 
 function start_game(){
    // btn.style.display= 'none';
@@ -47,15 +50,15 @@ function build_question(){
             let temp = vals[0]*vals[1];
             // replace the value of the temp in front of the vals array
             vals.unshift(temp);
-            console.log(temp);
+           //console.log(temp);
         }
         else{
             vals[2]= eval(vals[0]+ opts[game.Ovals[0]] + vals[1]);
         }
         vals[3]= opts[game.Ovals[0]];
         
-        console.log(vals)
-         let hidden_value 
+        //console.log(vals);
+        let hidden_value ;
         //select the value where support to be the hidden one
         if(game.hidden_value !=3){
             hidden_value = game.hidden_value
@@ -63,11 +66,38 @@ function build_question(){
             // hidde a value  and show the others
             hidden_value = Math.floor(Math.random()*3);
         }
+
+
+        answer.value ='';
        
+       for(let i=0;i<3;i++){
 
-        vals[hidden_value]= '_';
+            if(hidden_value ==i){
+                output.append(answer);
+            }
+            else{
+                maker(vals[i],'box');
+            }
+            if(i==0){
+                maker(vals[3],'box_hidden');
+            }
+            if(i==1){
+                maker('=','box_hidden');
+            }
+       }
+   
 
-        output.innerHTML = `${vals[0]} ${vals[3]} ${vals[1]} = ${vals[2]}`
+        
+        //vals[hidden_value]= '_';
+        //output.innerHTML = `${vals[0]} ${vals[3]} ${vals[1]} = ${vals[2]}`
     }
    
+}
+
+function maker(valeur,classe){
+    const temp =document.createElement('div');
+    temp.classList.add(classe);
+    temp.textContent = valeur;
+    output.append(temp);
+
 }

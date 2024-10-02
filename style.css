@@ -1,3 +1,66 @@
-body{
-    background-color: antiquewhite;
+h1{
+    text-align: center;
+    justify-content: center;
+    
+    border: 1px solid mediumslateblue;
+    background-color: mediumslateblue;
+    /* position: fixed; */
+    margin-top: -8px;
+}
+
+.box{
+    display: inline-block;
+    padding: 7px;
+    text-align: center;
+    width: 60px;
+    line-height: 45px;
+    background-color: rgb(20, 6, 6);
+    border: 1px solid grey;
+    color: blue;
+    border-radius: 10px;
+    
+}
+.box_answer{
+    display: inline-block;
+    font-size: 35px;
+    bottom: -2px;
+    padding: 7px;
+    text-align: center;
+    width: 60px;
+    line-height: 45px;
+    background-color: white;
+    border: 1px solid rgb(195, 44, 44);
+    color: blue;
+    font-weight: bold;
+   
+}
+
+.box_hidden{
+    display: inline-block;
+    padding: 7px;
+    text-align: center;
+    width: 45px;
+    line-height: 45px;
+    background-color: rgb(164, 164, 164);
+    border: 1px solid grey;
+    color: blue;
+    border-radius: 20px;
+}
+
+.output{
+    text-align: center;
+    font-size: 25px;
+    padding: 30px;
+    margin: 30px;
+}
+
+button{
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    display: block;
+    background-color: brown;
+    padding: 10px;
+    border-radius: 15%;
+    color: beige;
 }
